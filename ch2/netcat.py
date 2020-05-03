@@ -183,7 +183,7 @@ def client_handler(client_socket):
     if command:
         print("DBG: shell requested")
         # show a prompt
-        client_socket.send("<BHP:#> ".encode())
+        client_socket.send("<ncat:#> ".encode())
         while True:
 
             # now receive until linefeed
@@ -198,7 +198,7 @@ def client_handler(client_socket):
                 response = response.encode()
 
             # send back the response
-            client_socket.send(response + "<BHPL#> ".encode())
+            client_socket.send(response + "<ncat:#> ".encode())
 
 
 main()
